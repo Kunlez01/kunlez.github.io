@@ -1,434 +1,1346 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+          content="Olukunle Oyewale - Data Analyst Portfolio | Power BI, SQL, Python and Excel">
+
+    <meta name="author" content="Olukunle Oyewale">
+
     <title>Olukunle Oyewale | Data Analyst Portfolio</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png">
-    <link rel="apple-touch-icon" href="assets/images/favicon-32x32.png">
+    <link rel="icon"
+          type="image/png"
+          href="assets/images/favicon-32x32.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
     <link
         rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+
+        /* =====================================================
+           GLOBAL VARIABLES
+        ===================================================== */
+
+        :root {
+            --primary: #0F172A;
+            --primary-light: #1E293B;
+
+            --blue: #2563EB;
+            --blue-dark: #1D4ED8;
+            --blue-light: #EFF6FF;
+
+            --background: #F8FAFC;
+            --surface: #FFFFFF;
+
+            --text: #1E293B;
+            --muted: #64748B;
+
+            --border: #E2E8F0;
+
+            --success: #16A34A;
+
+            --max-width: 1150px;
+
+            --shadow-sm: 0 4px 15px rgba(15, 23, 42, 0.06);
+            --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.10);
+
+            --radius: 14px;
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ===================================================== */
+
+        .container {
+            width: min(92%, var(--max-width));
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           HEADER / HERO
+        ===================================================== */
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 90px 0 75px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+            color: #93C5FD;
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(147, 197, 253, 0.2);
+            padding: 7px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: clamp(2.4rem, 6vw, 4.2rem);
+            line-height: 1.15;
+            margin-bottom: 18px;
+            font-weight: 800;
+        }
+
+        .hero-title {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: #CBD5E1;
+            margin-bottom: 15px;
+        }
+
+        .hero-description {
+            max-width: 720px;
+            margin: 0 auto 30px;
+            color: #94A3B8;
+            font-size: 1rem;
+        }
+
+
+        /* =====================================================
+           SOCIAL LINKS
+        ===================================================== */
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50%;
+
+            color: #CBD5E1;
+
+            transition: 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--blue);
+            border-color: var(--blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            min-height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+        }
+
+        nav a {
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+        nav a:hover {
+            color: var(--blue);
+        }
+
+
+        /* =====================================================
+           GENERAL SECTIONS
+        ===================================================== */
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-alt {
+            background: #F1F5F9;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 55px;
+        }
+
+        .section-heading h2 {
+            color: var(--primary);
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .profile-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-photo {
+            width: 260px;
+            height: 260px;
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 7px solid white;
+
+            box-shadow: var(--shadow-md);
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 18px;
+            font-size: 1.03rem;
+        }
+
+        .about-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .highlight {
+            background: var(--blue-light);
+            color: var(--blue-dark);
+
+            padding: 8px 14px;
+            border-radius: 8px;
+
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow-sm);
+
+            transition: 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+
+        /* =====================================================
+           PROJECT IMAGE GALLERY
+        ===================================================== */
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+
+            background: var(--border);
+        }
+
+        .project-image {
+            background: white;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+
+            transition: 0.4s ease;
+        }
+
+        .project-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .project-image-title {
+            padding: 10px;
+
+            background: white;
+
+            text-align: center;
+
+            font-size: 0.78rem;
+            font-weight: 700;
+
+            color: var(--primary);
+        }
+
+
+        /* =====================================================
+           PROJECT CONTENT
+        ===================================================== */
+
+        .project-card-content {
+            padding: 30px;
+        }
+
+        .project-card-content h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .project-card-content p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .project-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .tool-tag {
+            background: #F1F5F9;
+            color: var(--primary-light);
+
+            padding: 6px 11px;
+
+            border-radius: 6px;
+
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .project-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            padding: 11px 18px;
+
+            border-radius: 8px;
+
+            background: var(--blue);
+            color: white;
+
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--blue-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--blue);
+            border: 1px solid var(--blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--blue-light);
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: white;
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            padding: 30px;
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--blue-light);
+            color: var(--blue);
+
+            border-radius: 10px;
+
+            margin-bottom: 18px;
+
+            font-size: 1.2rem;
+        }
+
+        .skill-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-list span {
+            color: var(--muted);
+            background: #F8FAFC;
+
+            border: 1px solid var(--border);
+
+            padding: 6px 10px;
+            border-radius: 6px;
+
+            font-size: 0.8rem;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-wrapper {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .contact-intro {
+            text-align: center;
+            color: var(--muted);
+            margin-bottom: 35px;
+        }
+
+        .contact-form {
+            background: white;
+
+            padding: 35px;
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            border: 1px solid var(--border);
+            border-radius: 8px;
+
+            padding: 12px 14px;
+
+            font-family: inherit;
+            font-size: 0.9rem;
+
+            outline: none;
+
+            transition: 0.25s ease;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--blue);
+
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        }
+
+        .contact-submit {
+            border: none;
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: var(--primary);
+            color: #94A3B8;
+
+            text-align: center;
+
+            padding: 30px 0;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE DESIGN
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-wrapper {
+                margin-bottom: 10px;
+            }
+
+            .about-highlights {
+                justify-content: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image img {
+                height: 200px;
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            header {
+                padding: 70px 0 55px;
+            }
+
+            .section {
+                padding: 65px 0;
+            }
+
+            nav ul {
+                gap: 18px;
+            }
+
+            nav a {
+                font-size: 0.82rem;
+            }
+
+            .project-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image img {
+                height: auto;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+
+            .project-buttons {
+                flex-direction: column;
+            }
+
+            .project-buttons .btn {
+                width: 100%;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-    <!-- ==================== HEADER ==================== -->
-    <header>
-        <div class="container">
-            <h1>Olukunle Oyewale</h1>
 
-            <p>Data Analyst | Power BI, SQL, Excel &amp; Python</p>
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-            <div class="social-links">
-                <a
-                    href="https://www.linkedin.com/in/olukunle034/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+<header id="home">
 
-                <a
-                    href="[YOUR_GITHUB_URL]"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
+    <div class="container hero-content">
 
-                <a
-                    href="[YOUR_YOUTUBE_URL]"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
+        <span class="hero-label">
+            DATA ANALYST PORTFOLIO
+        </span>
 
-                <a
-                    href="assets/Olukunle_Oyewale_Data_Analyst_Resume.pdf"
-                    download
-                    title="Download CV">
-                    <i class="fas fa-file-arrow-down"></i>
-                </a>
-            </div>
+        <h1>
+            Olukunle Oyewale
+        </h1>
+
+        <p class="hero-title">
+            Data Analyst | Power BI | SQL | Python | Excel
+        </p>
+
+        <p class="hero-description">
+            I transform raw data into clear insights, interactive dashboards,
+            and practical business recommendations that support better decisions.
+        </p>
+
+
+        <div class="social-links">
+
+            <!-- LinkedIn -->
+            <a
+                href="https://www.linkedin.com/in/olukunle034/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn">
+
+                <i class="fab fa-linkedin-in"></i>
+
+            </a>
+
+
+            <!-- GitHub -->
+            <a
+                href="https://github.com/Kunlez01"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub">
+
+                <i class="fab fa-github"></i>
+
+            </a>
+
+
+            <!-- Resume -->
+            <a
+                href="assets/Olukunle_Oyewale_Data_Analyst_Resume.pdf"
+                download
+                aria-label="Download Resume">
+
+                <i class="fas fa-file-arrow-down"></i>
+
+            </a>
+
         </div>
-    </header>
+
+    </div>
+
+</header>
 
 
-    <!-- ==================== NAVIGATION ==================== -->
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <div class="container nav-container">
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
 
 
-    <!-- ==================== ABOUT ==================== -->
-    <section id="about" class="section">
-        <div class="container">
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about" class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
 
             <h2>About Me</h2>
 
-            <div class="about-content">
+            <p>
+                A data-focused professional passionate about turning
+                complex datasets into useful business insights.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="profile-wrapper">
 
                 <img
                     src="assets/images/profile-placeholder.jpg"
                     alt="Olukunle Oyewale"
                     class="profile-photo">
 
-                <div class="about-text">
+            </div>
+
+
+            <div class="about-text">
+
+                <p>
+                    I’m Olukunle Oyewale, a Data Analyst with a background
+                    in Mathematics. I use Power BI, SQL, Python, and Excel
+                    to clean, analyze, model, and visualize data.
+                </p>
+
+                <p>
+                    My work focuses on transforming raw and messy datasets
+                    into clear insights, interactive dashboards, KPI
+                    reporting systems, and practical recommendations that
+                    support better business decisions.
+                </p>
+
+                <p>
+                    This portfolio showcases selected data analytics and
+                    business intelligence projects across market analysis,
+                    inventory management, and other analytical use cases.
+                </p>
+
+
+                <div class="about-highlights">
+
+                    <span class="highlight">
+                        Power BI
+                    </span>
+
+                    <span class="highlight">
+                        SQL
+                    </span>
+
+                    <span class="highlight">
+                        Python
+                    </span>
+
+                    <span class="highlight">
+                        Excel
+                    </span>
+
+                    <span class="highlight">
+                        Data Visualization
+                    </span>
+
+                    <span class="highlight">
+                        DAX
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects" class="section section-alt">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>Featured Projects</h2>
+
+            <p>
+                Selected analytics projects demonstrating data cleaning,
+                analysis, modeling, DAX, visualization, and business
+                problem-solving.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- =================================================
+                 PROJECT 1
+            ================================================== -->
+
+            <article class="project-card">
+
+
+                <div class="project-gallery">
+
+
+                    <div class="project-image">
+
+                        <img
+                            src="assets/Executive.png"
+                            alt="Smartphone Market Executive Dashboard">
+
+                        <div class="project-image-title">
+                            Executive Dashboard
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-image">
+
+                        <img
+                            src="assets/Brand.png"
+                            alt="Smartphone Market Brand Dashboard">
+
+                        <div class="project-image-title">
+                            Brand Dashboard
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-image">
+
+                        <img
+                            src="assets/Product.png"
+                            alt="Smartphone Market Product Dashboard">
+
+                        <div class="project-image-title">
+                            Product Dashboard
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-card-content">
+
+                    <h3>
+                        Nigerian Smartphone Market Analysis
+                    </h3>
+
 
                     <p>
-                        I’m Olukunle Oyewale, a Data Analyst with a background in Mathematics.
-                        I use Power BI, SQL, Python, and Excel to clean, analyze, and visualize data.
-                        I enjoy turning complex datasets into clear insights, interactive dashboards,
-                        and practical recommendations that support better business decisions.
+                        Analyzed 2,800+ smartphone listings from Jumia Nigeria,
+                        cleaned and standardized product data, engineered
+                        product attributes, and built an interactive Power BI
+                        dashboard to analyze market pricing, brand performance,
+                        product characteristics, and customer review credibility.
                     </p>
+
+
+                    <div class="project-tools">
+
+                        <span class="tool-tag">
+                            Python
+                        </span>
+
+                        <span class="tool-tag">
+                            Pandas
+                        </span>
+
+                        <span class="tool-tag">
+                            Power BI
+                        </span>
+
+                        <span class="tool-tag">
+                            DAX
+                        </span>
+
+                        <span class="tool-tag">
+                            Data Cleaning
+                        </span>
+
+                        <span class="tool-tag">
+                            Data Modeling
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-buttons">
+
+                        <a
+                            href="https://github.com/Kunlez01/Nigerian-Smartphone-Market-Analysis/tree/main"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn">
+
+                            <i class="fab fa-github"></i>
+                            Documentation
+
+                        </a>
+
+
+                        <a
+                            href="https://app.powerbi.com/groups/me/reports/e3cfa1f8-bdfe-495f-9415-f8dbe9ee2bf6/3c1c74029e636d6b5130?experience=power-bi"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-secondary">
+
+                            <i class="fas fa-chart-column"></i>
+                            View Dashboard
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJECT 2
+            ================================================== -->
+
+            <article class="project-card">
+
+
+                <div class="project-gallery">
+
+
+                    <div class="project-image">
+
+                        <img
+                            src="assets/Inventory.png"
+                            alt="Restaurant Inventory Overview Dashboard">
+
+                        <div class="project-image-title">
+                            Inventory Overview
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-image">
+
+                        <img
+                            src="assets/Waste.png"
+                            alt="Restaurant Inventory Waste Dashboard">
+
+                        <div class="project-image-title">
+                            Waste Analysis
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-image">
+
+                        <img
+                            src="assets/replenishment.png"
+                            alt="Restaurant Inventory Replenishment Dashboard">
+
+                        <div class="project-image-title">
+                            Supplier & Replenishment
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-card-content">
+
+                    <h3>
+                        Restaurant Inventory Intelligence Dashboard
+                    </h3>
+
 
                     <p>
-                        This portfolio showcases my data analytics and business intelligence projects.
+                        Built a 3-page Power BI dashboard analyzing restaurant
+                        inventory value, usage, waste, stock coverage, supplier
+                        lead times, and replenishment risk to support better
+                        inventory management and purchasing decisions.
                     </p>
 
+
+                    <div class="project-tools">
+
+                        <span class="tool-tag">
+                            Power BI
+                        </span>
+
+                        <span class="tool-tag">
+                            DAX
+                        </span>
+
+                        <span class="tool-tag">
+                            Power Query
+                        </span>
+
+                        <span class="tool-tag">
+                            Excel
+                        </span>
+
+                        <span class="tool-tag">
+                            Data Modeling
+                        </span>
+
+                        <span class="tool-tag">
+                            KPI Reporting
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-buttons">
+
+                        <a
+                            href="https://github.com/Kunlez01/Restaurant-Inventory-Analysis"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn">
+
+                            <i class="fab fa-github"></i>
+                            Documentation
+
+                        </a>
+
+
+                        <a
+                            href="https://app.powerbi.com/groups/me/reports/9dc5e688-b997-4b15-beef-fd0b90d57c9c/1d3f6022a7547b515954?experience=power-bi"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-secondary">
+
+                            <i class="fas fa-chart-column"></i>
+                            View Dashboard
+
+                        </a>
+
+                    </div>
+
                 </div>
-            </div>
+
+            </article>
+
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- ==================== PROJECTS ==================== -->
-    <section id="projects" class="section">
-        <div class="container">
 
-            <h2>My Projects</h2>
+<!-- =====================================================
+     SKILLS
+===================================================== -->
 
-            <div class="projects-grid">
+<section id="skills" class="section">
 
-
-                <!-- ===== PROJECT 1 ===== -->
-                <div class="project-card">
-
-                    <table class="project-gallery">
-                        <tr>
-                            <th>Executive Dashboard</th>
-                            <th>Brand Dashboard</th>
-                            <th>Product Dashboard</th>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <img
-                                    src="assets/Executive.png"
-                                    alt="Smartphone Executive Dashboard">
-                            </td>
-
-                            <td>
-                                <img
-                                    src="assets/Brand.png"
-                                    alt="Smartphone Brand Dashboard">
-                            </td>
-
-                            <td>
-                                <img
-                                    src="assets/Product.png"
-                                    alt="Smartphone Product Dashboard">
-                            </td>
-                        </tr>
-                    </table>
-
-                    <div class="project-card-content">
-
-                        <h3>
-                            Smartphone Market Analysis | Power BI &amp; Python
-                        </h3>
-
-                        <p>
-                            Analyzed 2,800+ smartphone listings scraped from Jumia and Konga
-                            to identify brand performance, pricing trends, and popular
-                            RAM/storage combinations. Built interactive dashboards to turn
-                            raw market data into actionable insights.
-                        </p>
-
-                        <div class="project-buttons">
-
-                            <a
-                                href="https://github.com/Kunlez01/Nigerian-Smartphone-Market-Analysis/tree/main"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn">
-                                Documentation
-                            </a>
-
-                            <a
-                                href="https://app.powerbi.com/groups/me/reports/e3cfa1f8-bdfe-495f-9415-f8dbe9ee2bf6/3c1c74029e636d6b5130?experience=power-bi"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn btn-secondary">
-                                View Dashboard
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
+    <div class="container">
 
 
-                <!-- ===== PROJECT 2 ===== -->
-                <div class="project-card">
+        <div class="section-heading">
 
-                    <table class="project-gallery">
-                        <tr>
-                            <th>Inventory Dashboard</th>
-                            <th>Waste Dashboard</th>
-                            <th>Replenishment Dashboard</th>
-                        </tr>
+            <h2>Technical Skills</h2>
 
-                        <tr>
-                            <td>
-                                <img
-                                    src="assets/Inventory.png"
-                                    alt="Inventory Management Dashboard">
-                            </td>
+            <p>
+                Tools and analytical capabilities used throughout my
+                data analytics projects.
+            </p>
 
-                            <td>
-                                <img
-                                    src="assets/Waste.png"
-                                    alt="Inventory Waste Dashboard">
-                            </td>
-
-                            <td>
-                                <img
-                                    src="assets/replenishment.png"
-                                    alt="Inventory Replenishment Dashboard">
-                            </td>
-                        </tr>
-                    </table>
-
-                    <div class="project-card-content">
-
-                        <h3>
-                            Inventory Management Analytics | Power BI
-                        </h3>
-
-                        <p>
-                            Built an interactive inventory dashboard to monitor stock levels,
-                            usage, waste, inventory value, supplier lead times, and
-                            replenishment risk. Tools used: Power BI, DAX, Power Query,
-                            Excel, and data modeling.
-                        </p>
-
-                        <div class="project-buttons">
-
-                            <a
-                                href="https://github.com/Kunlez01/Restaurant-Inventory-Analysis"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn">
-                                Documentation
-                            </a>
-
-                            <a
-                                href="https://app.powerbi.com/groups/me/reports/9dc5e688-b997-4b15-beef-fd0b90d57c9c/1d3f6022a7547b515954?experience=power-bi"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn btn-secondary">
-                                View Dashboard
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- ===== PROJECT 3 ===== -->
-                <div class="project-card">
-
-                    <img
-                        src="assets/images/project-placeholder-3.jpg"
-                        alt="Project Three Preview">
-
-                    <div class="project-card-content">
-
-                        <h3>Project Title Three</h3>
-
-                        <p>
-                            Add a brief description of the project, what you analyzed,
-                            and the tools used.
-                        </p>
-
-                        <div class="project-buttons">
-
-                            <a
-                                href="[YOUR_GITHUB_PROJECT_URL]"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn">
-                                Documentation
-                            </a>
-
-                            <a
-                                href="[YOUR_LIVE_DASHBOARD_URL]"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn btn-secondary">
-                                View Dashboard
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- ===== PROJECT 4 ===== -->
-                <div class="project-card">
-
-                    <img
-                        src="assets/images/project-placeholder-4.jpg"
-                        alt="Project Four Preview">
-
-                    <div class="project-card-content">
-
-                        <h3>Project Title Four</h3>
-
-                        <p>
-                            Add a brief description of the project, what you analyzed,
-                            and the tools used.
-                        </p>
-
-                        <div class="project-buttons">
-
-                            <a
-                                href="[YOUR_GITHUB_PROJECT_URL]"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn">
-                                Documentation
-                            </a>
-
-                            <a
-                                href="[YOUR_LIVE_DASHBOARD_URL]"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn btn-secondary">
-                                View Dashboard
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </div>
-    </section>
 
 
-    <!-- ==================== SKILLS ==================== -->
-    <section id="skills" class="section">
-
-        <div class="container">
-
-            <h2>Technical Skillset</h2>
-
-            <div class="skills-table">
+        <div class="skills-grid">
 
 
-                <!-- Data Visualization -->
-                <div class="skill-column">
+            <!-- Data Visualization -->
 
-                    <div class="skill-header">
-                        <i class="fas fa-chart-pie"></i>
-                        <h3>Data Visualization</h3>
-                    </div>
+            <div class="skill-card">
 
-                    <ul class="skill-list">
-                        <li>Power BI</li>
-                        <li>Excel</li>
-                        <li>Python</li>
-                        <li>SQL</li>
-                    </ul>
-
+                <div class="skill-icon">
+                    <i class="fas fa-chart-line"></i>
                 </div>
 
+                <h3>
+                    Data Visualization
+                </h3>
 
-                <!-- Data Analysis -->
-                <div class="skill-column">
+                <div class="skill-list">
 
-                    <div class="skill-header">
-                        <i class="fas fa-search"></i>
-                        <h3>Data Analysis</h3>
-                    </div>
-
-                    <ul class="skill-list">
-                        <li>SQL</li>
-                        <li>Advanced Excel</li>
-                        <li>Python (Pandas)</li>
-                        <li>Google Sheets</li>
-                    </ul>
-
-                </div>
-
-
-                <!-- Data Modeling & ETL -->
-                <div class="skill-column">
-
-                    <div class="skill-header">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Data Modeling &amp; ETL</h3>
-                    </div>
-
-                    <ul class="skill-list">
-                        <li>Power Query (M)</li>
-                        <li>DAX</li>
-                        <li>Star Schema Design</li>
-                        <li>ETL Processes</li>
-                    </ul>
+                    <span>Power BI</span>
+                    <span>Excel</span>
+                    <span>Python</span>
+                    <span>Data Visualization</span>
+                    <span>KPI Dashboards</span>
 
                 </div>
 
             </div>
+
+
+
+            <!-- Data Analysis -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    <i class="fas fa-magnifying-glass-chart"></i>
+                </div>
+
+                <h3>
+                    Data Analysis
+                </h3>
+
+                <div class="skill-list">
+
+                    <span>SQL</span>
+                    <span>PostgreSQL</span>
+                    <span>Pandas</span>
+                    <span>EDA</span>
+                    <span>Excel</span>
+                    <span>Statistical Analysis</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Data Modeling -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+
+                <h3>
+                    Data Modeling & ETL
+                </h3>
+
+                <div class="skill-list">
+
+                    <span>Power Query</span>
+                    <span>DAX</span>
+                    <span>Data Modeling</span>
+                    <span>Star Schema</span>
+                    <span>ETL</span>
+
+                </div>
+
+            </div>
+
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- ==================== CONTACT ==================== -->
-    <section id="contact" class="section">
 
-        <div class="container">
+<!-- =====================================================
+     CONTACT
+===================================================== -->
 
-            <h2>Send Me a Message</h2>
+<section id="contact" class="section section-alt">
+
+    <div class="container">
+
+        <div class="contact-wrapper">
+
+
+            <div class="section-heading">
+
+                <h2>Let's Connect</h2>
+
+                <p>
+                    Interested in discussing a project, collaboration,
+                    or data analytics opportunity?
+                </p>
+
+            </div>
+
 
             <form
                 action="https://formsubmit.co/kunlex.mth01@gmail.com"
                 method="POST"
                 class="contact-form">
 
-                <p>
-                    Interested in collaborating or have questions about my work?
-                    I'd love to hear from you!
-                </p>
 
                 <!-- FormSubmit Settings -->
+
                 <input
                     type="hidden"
                     name="_subject"
@@ -440,93 +1352,119 @@
                     value="false">
 
 
-                <!-- Name -->
-                <div class="form-group">
-
-                    <label for="name">Name</label>
-
-                    <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        placeholder="Your name"
-                        required>
-
-                </div>
+                <div class="form-row">
 
 
-                <!-- Email -->
-                <div class="form-group">
+                    <!-- Name -->
 
-                    <label for="email">Email</label>
+                    <div class="form-group">
 
-                    <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="Your email"
-                        required>
+                        <label for="name">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your name"
+                            required>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Your email"
+                            required>
+
+                    </div>
 
                 </div>
 
 
                 <!-- Subject -->
+
                 <div class="form-group">
 
-                    <label for="subject">Subject</label>
+                    <label for="subject">
+                        Subject
+                    </label>
 
                     <input
                         type="text"
-                        name="subject"
                         id="subject"
-                        placeholder="Subject"
+                        name="subject"
+                        placeholder="How can I help?"
                         required>
 
                 </div>
 
 
                 <!-- Message -->
+
                 <div class="form-group">
 
-                    <label for="message">Message</label>
+                    <label for="message">
+                        Message
+                    </label>
 
                     <textarea
-                        name="message"
                         id="message"
+                        name="message"
                         rows="6"
-                        placeholder="Your message"
+                        placeholder="Write your message..."
                         required></textarea>
 
                 </div>
 
 
-                <!-- Submit -->
-                <button type="submit" class="btn">
+                <button
+                    type="submit"
+                    class="btn contact-submit">
+
+                    <i class="fas fa-paper-plane"></i>
                     Send Message
+
                 </button>
 
             </form>
 
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer>
 
-        <div class="container">
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
-            <p>
-                &copy; 2026 Olukunle Oyewale. All rights reserved.
-            </p>
+<footer>
 
-        </div>
+    <div class="container">
 
-    </footer>
+        <p>
+            &copy; 2026 Olukunle Oyewale.
+            All rights reserved.
+        </p>
 
+    </div>
 
-    <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
+</footer>
+
 
 </body>
 </html>
