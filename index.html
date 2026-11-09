@@ -12,9 +12,8 @@
     <title>Olukunle Oyewale | Data Analyst Portfolio</title>
 
     <!-- Favicon -->
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="./assets/favicon-32x32.png">
-<link rel="apple-touch-icon" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" href="./assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="./assets/favicon-32x32.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -388,6 +387,19 @@
             color: var(--primary);
         }
 
+        /* Single-image gallery (used by the E-commerce project) */
+
+        .project-gallery.single {
+            grid-template-columns: 1fr;
+        }
+
+        .project-gallery.single .project-image img {
+            height: auto;
+            max-height: 520px;
+            object-fit: contain;
+            background: white;
+        }
+
 
         /* =====================================================
            PROJECT CONTENT
@@ -406,6 +418,12 @@
         .project-card-content p {
             color: var(--muted);
             margin-bottom: 20px;
+        }
+
+        .project-card-content p.project-note {
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: -8px;
         }
 
         .project-tools {
@@ -924,8 +942,7 @@
 
         <div class="section-heading">
 
-            <h2>DATA ANALYTICS PROJECTS (EXPERIENCE) 
-</h2>
+            <h2>DATA ANALYTICS PROJECTS (EXPERIENCE)</h2>
 
             <p>
                 Selected analytics projects demonstrating data cleaning,
@@ -940,7 +957,7 @@
 
 
             <!-- =================================================
-                 PROJECT 1
+                 PROJECT 1: NIGERIAN SMARTPHONE MARKET ANALYSIS
             ================================================== -->
 
             <article class="project-card">
@@ -1035,42 +1052,40 @@
                     </div>
 
 
-                   <div class="project-buttons">
+                    <div class="project-buttons">
 
-    <a
-        href="https://github.com/Kunlez01/Nigerian-Smartphone-Market-Analysis/tree/main"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn">
+                        <a
+                            href="https://github.com/Kunlez01/Nigerian-Smartphone-Market-Analysis/tree/main"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn">
 
-        <i class="fab fa-github"></i>
-        Documentation
+                            <i class="fab fa-github"></i>
+                            Documentation
 
-    </a>
+                        </a>
 
-    <a
-        href="https://app.powerbi.com/reportEmbed?reportId=e3cfa1f8-bdfe-495f-9415-f8dbe9ee2bf6&autoAuth=true&ctid=a29037ad-c24c-47f1-b52f-ec3218d5c4e9"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-secondary">
+                        <a
+                            href="https://app.powerbi.com/reportEmbed?reportId=e3cfa1f8-bdfe-495f-9415-f8dbe9ee2bf6&autoAuth=true&ctid=a29037ad-c24c-47f1-b52f-ec3218d5c4e9"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-secondary">
 
-        <i class="fas fa-chart-column"></i>
-        Open Dashboard
+                            <i class="fas fa-chart-column"></i>
+                            Open Dashboard
 
-    </a>
+                        </a>
 
-</div>
+                    </div>
 
-<div class="dashboard-container">
+                </div>
 
-
-</div>
             </article>
 
 
 
             <!-- =================================================
-                 PROJECT 2
+                 PROJECT 2: RESTAURANT INVENTORY INTELLIGENCE DASHBOARD
             ================================================== -->
 
             <article class="project-card">
@@ -1163,180 +1178,155 @@
 
                     </div>
 
-<div class="project-buttons">
 
-    <a
-        href="https://github.com/Kunlez01/Restaurant-Inventory-Analysis"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn">
+                    <div class="project-buttons">
 
-        <i class="fab fa-github"></i>
-        Documentation
+                        <a
+                            href="https://github.com/Kunlez01/Restaurant-Inventory-Analysis"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn">
 
-    </a>
+                            <i class="fab fa-github"></i>
+                            Documentation
 
-    <a
-        href="https://app.powerbi.com/reportEmbed?reportId=e3cfa1f8-bdfe-495f-9415-f8dbe9ee2bf6&autoAuth=true&ctid=a29037ad-c24c-47f1-b52f-ec3218d5c4e9"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-secondary">
+                        </a>
 
-        <i class="fas fa-chart-column"></i>
-        Open Dashboard
+                        <a
+                            href="https://app.powerbi.com/reportEmbed?reportId=9dc5e688-b997-4b15-beef-fd0b90d57c9c&autoAuth=true&ctid=a29037ad-c24c-47f1-b52f-ec3218d5c4e9"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-secondary">
 
-    </a>
+                            <i class="fas fa-chart-column"></i>
+                            Open Dashboard
 
-</div>
+                        </a>
 
-<div class="dashboard-container">
+                    </div>
 
+                </div>
 
-</div>
             </article>
 
 
-                   <!--
-=====================================================================
-E-COMMERCE MARKET ANALYSIS: PORTFOLIO PROJECT BLOCK
-=====================================================================
-HOW TO ADD IT
-1. Upload "ecommerce-dashboard.png" to your site's assets/ folder
-   (the same folder as Executive.png, Inventory.png, etc.).
-2. Open index.html and find the Restaurant Inventory Intelligence
-   Dashboard project (its title, tags and Documentation / Open Dashboard buttons).
-3. Paste EVERYTHING below (the <style> block and the <article>) directly
-   AFTER that project's closing tag, inside the Projects section.
-4. Replace the two "#" links at the bottom:
-   - Documentation  -> already set to your GitHub repo
-   - Open Dashboard -> your Power BI "Publish to web" link
-   Delete a button if you do not have that link yet.
-The styles are scoped to ".ecom-project", so they will not change the rest
-of your page, and they inherit your site's fonts and text colours.
-=====================================================================
--->
-<style>
-  .ecom-project {
-    margin: 3rem 0;
-    font-family: inherit;
-    color: inherit;
-  }
-  .ecom-project__figure {
-    margin: 0 0 1.25rem 0;
-  }
-  .ecom-project__figure img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    border: 1px solid rgba(128, 128, 128, 0.25);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  }
-  .ecom-project__figure figcaption {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    text-align: center;
-    opacity: 0.8;
-  }
-  .ecom-project__title {
-    margin: 0 0 0.6rem 0;
-    font-size: 1.5rem;
-    line-height: 1.3;
-  }
-  .ecom-project__text {
-    margin: 0 0 0.9rem 0;
-    line-height: 1.65;
-  }
-  .ecom-project__note {
-    margin: 0 0 1rem 0;
-    font-size: 0.9rem;
-    font-style: italic;
-    opacity: 0.8;
-  }
-  .ecom-project__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0 0 1.1rem 0;
-    padding: 0;
-    list-style: none;
-  }
-  .ecom-project__tags li {
-    padding: 0.25rem 0.75rem;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    background: rgba(31, 95, 122, 0.14);
-    border: 1px solid rgba(31, 95, 122, 0.35);
-  }
-  .ecom-project__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-  .ecom-project__btn {
-    display: inline-block;
-    padding: 0.6rem 1.1rem;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    background: #1f5f7a;
-    color: #ffffff;
-    border: 2px solid #1f5f7a;
-    transition: opacity 0.2s ease;
-  }
-  .ecom-project__btn:hover { opacity: 0.85; }
-  .ecom-project__btn--outline {
-    background: transparent;
-    color: inherit;
-  }
-  @media (max-width: 600px) {
-    .ecom-project__title { font-size: 1.25rem; }
-  }
-</style>
 
-<article class="ecom-project" id="ecommerce-market-analysis">
-  <figure class="ecom-project__figure">
-    <img
-      src="assets/ecommerce-dashboard.png"
-      alt="E-commerce Market Analysis Power BI dashboard showing KPI cards, profit by state, revenue by category, return rate by channel and monthly trends"
-      loading="lazy">
-    <figcaption>Corrected E-commerce Market Analysis dashboard</figcaption>
-  </figure>
+            <!-- =================================================
+                 PROJECT 3: E-COMMERCE MARKET ANALYSIS (DASHBOARD AUDIT)
+                 Needs assets/ecommerce-dashboard.png uploaded to your assets folder.
+            ================================================== -->
 
-  <h3 class="ecom-project__title">E-commerce Market Analysis (Dashboard Audit)</h3>
+            <article class="project-card" id="ecommerce-market-analysis">
 
-  <p class="ecom-project__text">
-    Audited a management dashboard built on 432 retail transactions across five
-    Nigerian states, three sales channels and three product categories. I cleaned
-    the data in Power Query by removing duplicate records and standardising
-    inconsistent state and category labels, then rebuilt the dashboard in Power BI
-    with KPI cards, state, category, channel and monthly views, and a
-    New/Returning customer filter.
-  </p>
-  <p class="ecom-project__text">
-    The corrected view showed that Lagos, not Abuja, was the most profitable
-    market, and that In-store had the lowest return rate (6.4%), ahead of Online
-    (9.7%) and WhatsApp (11.9%). That corrected the claim that Online had the
-    lowest return rate.
-  </p>
-  <p class="ecom-project__note">
-    Independent project based on the DSN AI Bootcamp 2026 data analytics challenge brief.
-  </p>
 
-  <ul class="ecom-project__tags">
-    <li>Power BI</li>
-    <li>Power Query</li>
-    <li>Data Cleaning</li>
-    <li>Data Audit</li>
-    <li>KPI Reporting</li>
-  </ul>
+                <div class="project-gallery single">
 
-  <div class="ecom-project__actions">
-    <a class="ecom-project__btn" href="https://github.com/Kunlez01/Executive-Management-Dashboard"   
-        <!-- Replace # with your Power BI "Publish to web" link, or delete this button -->
-    <a class="ecom-project__btn ecom-project__btn--outline" href="#" target="_blank" rel="noopener">Open Dashboard</a>
-  </div>
-</article>
+
+                    <div class="project-image">
+
+                        <img
+                            src="assets/ecommerce-dashboard.png"
+                            alt="E-commerce Market Analysis Power BI dashboard with KPI cards, profit by state, revenue by category, return rate by channel and monthly trends">
+
+                        <div class="project-image-title">
+                            Corrected E-commerce Market Analysis Dashboard
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-card-content">
+
+                    <h3>
+                        E-commerce Market Analysis (Dashboard Audit)
+                    </h3>
+
+
+                    <p>
+                        Audited a management dashboard built on 432 retail
+                        transactions across five Nigerian states, three sales
+                        channels and three product categories. Cleaned the data
+                        in Power Query by removing duplicate records and
+                        standardizing inconsistent state and category labels,
+                        then rebuilt the dashboard in Power BI. The corrected
+                        view showed Lagos, not Abuja, was the most profitable
+                        market, and In-store had the lowest return rate (6.4%),
+                        ahead of Online (9.7%) and WhatsApp (11.9%).
+                    </p>
+
+                    <p class="project-note">
+                        Independent project based on the DSN AI Bootcamp 2026
+                        data analytics challenge brief.
+                    </p>
+
+
+                    <div class="project-tools">
+
+                        <span class="tool-tag">
+                            Power BI
+                        </span>
+
+                        <span class="tool-tag">
+                            Power Query
+                        </span>
+
+                        <span class="tool-tag">
+                            Data Cleaning
+                        </span>
+
+                        <span class="tool-tag">
+                            Data Audit
+                        </span>
+
+                        <span class="tool-tag">
+                            KPI Reporting
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-buttons">
+
+                        <a
+                            href="https://github.com/Kunlez01/Executive-Management-Dashboard"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn">
+
+                            <i class="fab fa-github"></i>
+                            Documentation
+
+                        </a>
+
+                        <!--
+                        When you have a Power BI "Publish to web" link, add this button:
+
+                        <a
+                            href="PASTE-YOUR-POWER-BI-LINK-HERE"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-secondary">
+
+                            <i class="fas fa-chart-column"></i>
+                            Open Dashboard
+
+                        </a>
+                        -->
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
 
 
 
