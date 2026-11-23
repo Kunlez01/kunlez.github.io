@@ -1084,131 +1084,112 @@
 
 
 
-            <!-- =================================================
-                 PROJECT 2: RESTAURANT INVENTORY INTELLIGENCE DASHBOARD
-            ================================================== -->
+            <!-- <!--
+=====================================================================
+RESTAURANT INVENTORY PROJECT: UPDATED CARD CONTENT (VERSION 2)
+=====================================================================
+HOW TO USE
+1. In index.html, find PROJECT 2 (the card whose title is
+   "Restaurant Inventory Intelligence Dashboard").
+2. Inside that card, replace the whole
+   <div class="project-card-content"> ... </div> block with the block below.
+   Leave the <div class="project-gallery"> (the three images) above it as it is.
+3. Replace the three images in your assets folder with the corrected
+   screenshots, keeping the same file names:
+     assets/Overview_Dashboard.png       (Inventory Overview)
+     assets/Waste_Dashboard.png           (Inventory & Waste Analysis)
+     assets/Replenishment_Dashboard.png   (Supplier & Replenishment)
+4. Republish the corrected report to Power BI (same report, replace the old
+   version) so the "Open Dashboard" button shows the corrected numbers.
+=====================================================================
+-->
 
-            <article class="project-card">
+<div class="project-card-content">
 
-
-                <div class="project-gallery">
-
-
-                    <div class="project-image">
-
-                        <img
-                            src="assets/Inventory.png"
-                            alt="Restaurant Inventory Overview Dashboard">
-
-                        <div class="project-image-title">
-                            Inventory Overview
-                        </div>
-
-                    </div>
-
-
-                    <div class="project-image">
-
-                        <img
-                            src="assets/Waste.png"
-                            alt="Restaurant Inventory Waste Dashboard">
-
-                        <div class="project-image-title">
-                            Waste Analysis
-                        </div>
-
-                    </div>
+    <h3>
+        Restaurant Inventory Intelligence Dashboard
+    </h3>
 
 
-                    <div class="project-image">
+    <p>
+        Built a three-page Power BI dashboard on 100 days of restaurant
+        inventory data to show which items will run out before the next
+        supplier delivery, where waste is concentrated, and how suppliers
+        compare. Each item is marked Healthy, Watch or At Risk by comparing
+        days of stock cover with supplier lead time, and a date filter updates
+        every page. For example, on 22 June 2025, 1 of 10 items (chicken) was
+        At Risk, and Mutton, Chicken and Paneer made up about 87% of that
+        day's estimated waste value.
+    </p>
 
-                        <img
-                            src="assets/replenishment.png"
-                            alt="Restaurant Inventory Replenishment Dashboard">
-
-                        <div class="project-image-title">
-                            Supplier & Replenishment
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-card-content">
-
-                    <h3>
-                        Restaurant Inventory Intelligence Dashboard
-                    </h3>
+    <p style="font-size: 0.9rem; font-style: italic;">
+        Version 2 update: after the first release, I audited the dashboard
+        against the raw data and corrected a 100&times; error in the waste
+        calculation (the waste percentage is stored as a whole number),
+        aligned the date filter across all pages, and clarified the KPI labels.
+    </p>
 
 
-                    <p>
-                        Built a 3-page Power BI dashboard analyzing restaurant
-                        inventory value, usage, waste, stock coverage, supplier
-                        lead times, and replenishment risk to support better
-                        inventory management and purchasing decisions.
-                    </p>
+    <div class="project-tools">
+
+        <span class="tool-tag">
+            Power BI
+        </span>
+
+        <span class="tool-tag">
+            DAX
+        </span>
+
+        <span class="tool-tag">
+            Power Query
+        </span>
+
+        <span class="tool-tag">
+            Excel
+        </span>
+
+        <span class="tool-tag">
+            Data Modeling
+        </span>
+
+        <span class="tool-tag">
+            KPI Reporting
+        </span>
+
+        <span class="tool-tag">
+            Data Validation
+        </span>
+
+    </div>
 
 
-                    <div class="project-tools">
+    <div class="project-buttons">
 
-                        <span class="tool-tag">
-                            Power BI
-                        </span>
+        <a
+            href="https://github.com/Kunlez01/Restaurant-Inventory-Analysis"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn">
 
-                        <span class="tool-tag">
-                            DAX
-                        </span>
+            <i class="fab fa-github"></i>
+            Documentation
 
-                        <span class="tool-tag">
-                            Power Query
-                        </span>
+        </a>
 
-                        <span class="tool-tag">
-                            Excel
-                        </span>
+        <a
+            href="https://app.powerbi.com/reportEmbed?reportId=9dc5e688-b997-4b15-beef-fd0b90d57c9c&autoAuth=true&ctid=a29037ad-c24c-47f1-b52f-ec3218d5c4e9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary">
 
-                        <span class="tool-tag">
-                            Data Modeling
-                        </span>
+            <i class="fas fa-chart-column"></i>
+            Open Dashboard
 
-                        <span class="tool-tag">
-                            KPI Reporting
-                        </span>
+        </a>
 
-                    </div>
+    </div>
 
-
-                    <div class="project-buttons">
-
-                        <a
-                            href="https://github.com/Kunlez01/Restaurant-Inventory-Analysis"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn">
-
-                            <i class="fab fa-github"></i>
-                            Documentation
-
-                        </a>
-
-                        <a
-                            href="https://app.powerbi.com/reportEmbed?reportId=9dc5e688-b997-4b15-beef-fd0b90d57c9c&autoAuth=true&ctid=a29037ad-c24c-47f1-b52f-ec3218d5c4e9"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn btn-secondary">
-
-                            <i class="fas fa-chart-column"></i>
-                            Open Dashboard
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
+</div>
 
 
             <!-- =================================================
